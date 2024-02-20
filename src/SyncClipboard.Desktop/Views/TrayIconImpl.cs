@@ -11,10 +11,10 @@ namespace SyncClipboard.Desktop.Views;
 
 internal class TrayIconImpl : TrayIconBase<WindowIcon>
 {
-    private static readonly WindowIcon _DefaultIcon = new WindowIcon(AssetLoader.Open(new Uri("avares://SyncClipboard.Desktop/Assets/default.ico")));
-    private static readonly WindowIcon _ErrorIcon = new WindowIcon(AssetLoader.Open(new Uri("avares://SyncClipboard.Desktop/Assets/erro.ico")));
-    private static readonly WindowIcon _DefaultInactiveIcon = new WindowIcon(AssetLoader.Open(new Uri("avares://SyncClipboard.Desktop/Assets/default-inactive.ico")));
-    private static readonly WindowIcon _ErrorInactiveIcon = new WindowIcon(AssetLoader.Open(new Uri("avares://SyncClipboard.Desktop/Assets/erro-inactive.ico")));
+    private static readonly WindowIcon _DefaultIcon = new WindowIcon(AssetLoader.Open(new Uri("avares://SyncClipboard.Desktop/Assets/default.png")));
+    private static readonly WindowIcon _ErrorIcon = new WindowIcon(AssetLoader.Open(new Uri("avares://SyncClipboard.Desktop/Assets/erro.png")));
+    private static readonly WindowIcon _DefaultInactiveIcon = new WindowIcon(AssetLoader.Open(new Uri("avares://SyncClipboard.Desktop/Assets/default-inactive.png")));
+    private static readonly WindowIcon _ErrorInactiveIcon = new WindowIcon(AssetLoader.Open(new Uri("avares://SyncClipboard.Desktop/Assets/erro-inactive.png")));
 
     protected override WindowIcon DefaultIcon => _DefaultIcon;
     protected override WindowIcon ErrorIcon => _ErrorIcon;
@@ -69,7 +69,7 @@ internal class TrayIconImpl : TrayIconBase<WindowIcon>
     protected override WindowIcon[] UploadIcons()
     {
         return Enumerable.Range(1, 17)
-            .Select(x => $"avares://SyncClipboard.Desktop/Assets/upload{x:d3}.ico")
+            .Select(x => $"avares://SyncClipboard.Desktop/Assets/upload{x:d3}.png")
             .Select(x => new WindowIcon(AssetLoader.Open(new Uri(x))))
             .ToArray();
     }
@@ -77,7 +77,7 @@ internal class TrayIconImpl : TrayIconBase<WindowIcon>
     protected override WindowIcon[] DownloadIcons()
     {
         return Enumerable.Range(1, 17)
-            .Select(x => $"avares://SyncClipboard.Desktop/Assets/download{x:d3}.ico")
+            .Select(x => $"avares://SyncClipboard.Desktop/Assets/download{x:d3}.png")
             .Select(x => new WindowIcon(AssetLoader.Open(new Uri(x))))
             .ToArray();
     }
